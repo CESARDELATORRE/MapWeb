@@ -21,8 +21,12 @@
             <link rel="stylesheet" href="~/css/site.css" />
         </environment>
 
+        <!-- CDLTLL -->
+        <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+        <!-- CDLTLL -->
+
     </head>
-    <body>
+    <body onload="getMap();">
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -75,7 +79,7 @@
             </script>
         </environment>
 
-        @RenderSection("scripts", required: false)        
-
+        @RenderSection("scripts", required: false)
+        
         </body>
 </html>
