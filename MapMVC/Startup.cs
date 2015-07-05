@@ -51,7 +51,7 @@ namespace MapMVC
             // Add the following to the request pipeline only in development environment.
             if (env.IsEnvironment("Development"))
             {
-                app.UseBrowserLink();
+                //(CDLTLL - Error with Beta4) app.UseBrowserLink();
                 app.UseErrorPage(ErrorPageOptions.ShowAll);
             }
             else

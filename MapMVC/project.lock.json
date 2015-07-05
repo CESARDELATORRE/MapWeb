@@ -1548,7 +1548,7 @@
     },
     "Microsoft.CodeAnalysis.Analyzers/1.0.0-rc2": {
       "serviceable": false,
-      "sha": "io+RYvgQkqHVnXkTlaI8658P8idYNZl3VoBR7sy5llYW1ZYkytU3zkfPa43+osV7qE+Xcja1eGB6t8JD3mTseg==",
+      "sha": "S3P/WuSCgbhIxMVDFCJiJAh9g8ZVVIISsFn2lKqJYJdRGiFM2WJR0I46psNVXJt2uM13SBSGiAKAdqOeRvhl7w==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
           "dependencies": {},
@@ -1574,7 +1574,7 @@
     },
     "Microsoft.CodeAnalysis.Common/1.0.0-rc2": {
       "serviceable": false,
-      "sha": "h5Yqz4hefjRKLYNBuc+WTZkozstK+nCQUg4UogcZcSfM9xEkS+h3yLF7UuXNCI4II4qkoE32dtQb34ApDS6UBA==",
+      "sha": "LIc/rzjORrM0jrQ9ZtoIwJWbYi4IM7RvcSFT9YLe2uH9aBPq2oQ7qimK3ZosZJE+5faoJ+DgfGOigWw6uQpmQw==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
           "dependencies": {
@@ -1608,7 +1608,7 @@
     },
     "Microsoft.CodeAnalysis.CSharp/1.0.0-rc2": {
       "serviceable": false,
-      "sha": "kLhE7bchjnAbMuU1oHlO7vVxqu4JZYA2OsNeMdpPukjk1aMrrUzCMFC/WqH2283ewtGu9sQXeEsqlK0OXanwjA==",
+      "sha": "RdXyaAZSRJH/oU6ccy3RNgGVMwFY1fY41I0Rtpbch9nq4mePYrkjTk3YObNHYa4lowAhktlaUoQOpprmOzc/kg==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
           "dependencies": {
@@ -2950,7 +2950,7 @@
     },
     "System.Runtime/4.0.20-beta-22816": {
       "serviceable": false,
-      "sha": "sDSJEmM6Q5O7Nn9XxHTrsEJ4bv4hsBdeTWjuvyzd9/u9ujl9AWa3q1XFLrdPZetILPOC1P0+1LOCq4kZcsKF5Q==",
+      "sha": "BEN6F4aNjbBdDxM8Xhb/MCSDhYmtvA29c1HUBvn0aNAVXaIJECLy2w5YkcscdklIieZCrcYeG2UzIgWlr4+GeQ==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
           "dependencies": {},
