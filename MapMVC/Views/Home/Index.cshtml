@@ -14,11 +14,53 @@
 
           function addPushpinWithOptions()
           {
-            var offset = new Microsoft.Maps.Point(0, 5);
-            var pushpinOptions = {text : '1', visible: true, textOffset: offset};
-            var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(47.609102, -122.340261), pushpinOptions);
-            map.setView({ center: new Microsoft.Maps.Location(47.609102, -122.340261), zoom: 14.5 });
-            map.entities.push(pushpin);
+                var offset = new Microsoft.Maps.Point(0, 5);
+              //Default center in Pine with 4th, Seattle: 47.611313, -122.337650 but will change if any vehicle is located in the area
+                var LatitudeToCenter = 47.611313;
+                var LongitudeToCenter = -122.337650;
+
+                //var pushpinOptions = { text: '1', visible: true, textOffset: offset };
+                //var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(47.609102, -122.340261), pushpinOptions);
+                //map.setView({ center: new Microsoft.Maps.Location(47.609102, -122.340261), zoom: 14.5 });
+                //map.entities.push(pushpin);
+
+                var virtualPath = '/';
+                $.getJSON("http://localhost:8080/api/LiveVehicle/zipcode/98101/Vehicles",
+                            function (Data) {
+                                $.each(Data, function (key, id) {
+                                    var str = id;
+                                    var vehicleId = String(id);
+                                    $.getJSON("http://localhost:8080/api/LiveVehicle/" + id + "/GPSCoordinates",
+                                        function (GpsData) {
+                                            var imagePath = virtualPath + 'images/poi_car.png';
+                                            str = str + '---' + GpsData.Latitude + '---' + GpsData.Longitude + '---' + 'Car ID: ' + vehicleId + '---' + 'image path: ' + imagePath;
+                                            $('<li/>', { text: str })
+                                            .appendTo($('#items'));
+
+                                            //var pushpinOptions = { text: '1', visible: true, textOffset: offset };
+                                            var pushpinOptions = { text: vehicleId, icon: imagePath, visible: true, textOffset: offset };
+
+                                            var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(GpsData.Latitude, GpsData.Longitude), pushpinOptions);
+                                            //LatitudeToCenter = GpsData.Latitude;
+                                            //LongitudeToCenter = GpsData.Longitude;                                            
+                                            map.entities.push(pushpin);
+                                        })                                                                                                            
+                                });
+                            });
+
+                map.setView({ center: new Microsoft.Maps.Location(LatitudeToCenter, LongitudeToCenter), zoom: 16 });
+            
+                // Several elements per row
+                //
+                //$.getJSON("http://localhost:31003/api/LiveVehicle/zipcode/98101/Vehicles",
+                //                 function (Data) {
+                //                     $.each(Data, function (key, val) {
+                //                         var str = val.name + ': $' + val.cost;
+                //                         $('<li/>', { text: str })
+                //                         .appendTo($('#items'));
+                //                     });
+                //                 });
+
           }
 </script>
 
@@ -29,4 +71,11 @@
 <div>
     <input type="button" value="PaintVehicles" onclick="addPushpinWithOptions();" />
 </div>
+
+<div>
+    <ul id="debugItem" />
+    <h1>Vehicle IDs</h1>
+    <ul id="items" />
+</div>
+
 

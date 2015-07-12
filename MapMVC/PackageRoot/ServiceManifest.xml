@@ -24,7 +24,7 @@
    </CodePackage>
    <Resources>
       <Endpoints>
-         <Endpoint Name="MapMVCTypeEndpoint" Protocol="http" Type="Input" />
+         <Endpoint Name="MapMVCTypeEndpoint" Protocol="http" Type="Input" Port="88" />
       </Endpoints>
    </Resources>
 </ServiceManifest>
